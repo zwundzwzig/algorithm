@@ -22,4 +22,4 @@ function fountain(denum1, num1, denum2, num2) {
   return [numerator / gcd, lcm / gcd];
 }
 
-module.exports = fountain;
+export default { fountain };
