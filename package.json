@@ -1,10 +1,10 @@
 {
   "name": "programmers_algorithm",
   "version": "1.0.0",
-  "description": "",
+  "description": "프로그래머스 문제 풀이",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/zwundzwzig/programmers_algorithm/issues"
   },
-  "homepage": "https://github.com/zwundzwzig/programmers_algorithm#readme"
+  "homepage": "https://github.com/zwundzwzig/programmers_algorithm#readme",
+  "devDependencies": {
+    "jest": "^29.3.0"
+  }
 }
