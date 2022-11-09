@@ -1,4 +1,4 @@
-const fountain = require("../level_0/fountain");
+import { fountain, mode } from "../level_0";
 
 describe("fountain", () => {
   test("case1", () => {
@@ -11,5 +11,19 @@ describe("fountain", () => {
 
   test("case3", () => {
     expect(fountain(12, 44, 44, 22)).toEqual([25, 11]);
+  });
+});
+
+describe("mode", () => {
+  test("case1", () => {
+    expect(mode([1, 1, 2, 2])).toEqual(-1);
+  });
+
+  test("case2", () => {
+    expect(mode([1])).toEqual(1);
+  });
+
+  test("case3", () => {
+    expect(mode([1, 1, 1, 2, 2, 3])).toEqual(1);
   });
 });

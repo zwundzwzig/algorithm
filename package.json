@@ -19,5 +19,6 @@
   "homepage": "https://github.com/zwundzwzig/programmers_algorithm#readme",
   "devDependencies": {
     "jest": "^29.3.0"
-  }
+  },
+  "type": "module"
 }
