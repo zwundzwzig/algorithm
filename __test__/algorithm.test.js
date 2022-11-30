@@ -1,4 +1,4 @@
-import { fountain, mode } from "../level_0";
+import { fountain, mode, isCompositeNumber } from "../src/level_zero";
 
 describe("fountain", () => {
   test("case1", () => {
@@ -25,5 +25,19 @@ describe("mode", () => {
 
   test("case3", () => {
     expect(mode([1, 1, 1, 2, 2, 3])).toEqual(1);
+  });
+});
+
+describe("isCompositeNumber", () => {
+  test("case1", () => {
+    expect(isCompositeNumber(10)).toEqual(5);
+  });
+
+  test("case2", () => {
+    expect(isCompositeNumber(15)).toEqual(8);
+  });
+
+  test("case3", () => {
+    expect(isCompositeNumber(17)).toEqual(9);
   });
 });
