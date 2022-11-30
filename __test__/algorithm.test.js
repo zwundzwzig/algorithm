@@ -1,4 +1,11 @@
-import { fountain, mode, isCompositeNumber, nearNumber } from "../src/level_zero";
+import {
+  fountain,
+  mode,
+  isCompositeNumber,
+  nearNumber,
+  binaryNumber,
+  throwBall,
+} from "../src/level_zero";
 
 describe("fountain", () => {
   test("case1", () => {
@@ -53,5 +60,33 @@ describe("nearNumber", () => {
 
   test("case3", () => {
     expect(nearNumber([123, 334, 33, 1, 25], 13)).toEqual(1);
+  });
+});
+
+describe("binaryNumber", () => {
+  test("case1", () => {
+    expect(binaryNumber("10", "11")).toEqual("101");
+  });
+
+  test("case2", () => {
+    expect(binaryNumber("1001", "1111")).toEqual("11000");
+  });
+
+  test("case3", () => {
+    expect(binaryNumber("1", "1")).toEqual("10");
+  });
+});
+
+describe("throwBall", () => {
+  test("case1", () => {
+    expect(throwBall([1, 2, 3, 4], 2)).toEqual(3);
+  });
+
+  test("case2", () => {
+    expect(throwBall([1, 2, 3, 4, 5, 6],	5)).toEqual(3);
+  });
+
+  test("case3", () => {
+    expect(throwBall([1, 2, 3],	3)).toEqual(2);
   });
 });
