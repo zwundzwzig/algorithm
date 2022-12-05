@@ -1,4 +1,4 @@
-import { fountain, mode, isCompositeNumber } from "../src/level_zero";
+import { fountain, mode, isCompositeNumber, nearNumber } from "../src/level_zero";
 
 describe("fountain", () => {
   test("case1", () => {
@@ -39,5 +39,19 @@ describe("isCompositeNumber", () => {
 
   test("case3", () => {
     expect(isCompositeNumber(17)).toEqual(9);
+  });
+});
+
+describe("nearNumber", () => {
+  test("case1", () => {
+    expect(nearNumber([3, 10, 28], 20)).toEqual(28);
+  });
+
+  test("case2", () => {
+    expect(nearNumber([10, 11, 12], 13)).toEqual(12);
+  });
+
+  test("case3", () => {
+    expect(nearNumber([123, 334, 33, 1, 25], 13)).toEqual(1);
   });
 });
