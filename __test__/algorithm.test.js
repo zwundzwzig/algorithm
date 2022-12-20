@@ -8,6 +8,7 @@ import {
   sharingMarble,
   alienLanguageDic,
   locationOfCharacter,
+  completionConditionOfTriangle,
 } from "../src/level_zero";
 
 describe("fountain", () => {
@@ -154,5 +155,19 @@ describe("locationOfCharacter", () => {
 
   test("case3", () => {
     expect(locationOfCharacter(["up"], [0, 0])).toEqual([1, 0]);
+  });
+});
+
+describe("completionConditionOfTriangle", () => {
+  test("case1", () => {
+    expect(completionConditionOfTriangle([1, 2])).toEqual(1);
+  });
+
+  test("case2", () => {
+    expect(completionConditionOfTriangle([3, 6])).toEqual(5);
+  });
+
+  test("case3", () => {
+    expect(completionConditionOfTriangle([11, 7])).toEqual(13);
   });
 });

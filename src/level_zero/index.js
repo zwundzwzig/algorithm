@@ -8,6 +8,7 @@ import { sharingMarble } from "./sharingMarble"
 import { alienLanguageDic } from "./alienLanguageDic"
 import { deleteZandChar } from "./deleteZandChar"
 import { locationOfCharacter } from "./locationOfCharacter"
+import { completionConditionOfTriangle } from "./completionConditionOfTriangle"
 
 export default {
   fountain,
@@ -20,4 +21,5 @@ export default {
   alienLanguageDic,
   deleteZandChar,
   locationOfCharacter,
+  completionConditionOfTriangle,
 };
