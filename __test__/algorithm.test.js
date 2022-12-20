@@ -6,6 +6,7 @@ import {
   binaryNumber,
   throwBall,
   sharingMarble,
+  alienLanguageDic,
 } from "../src/level_zero";
 
 describe("fountain", () => {
@@ -84,11 +85,11 @@ describe("throwBall", () => {
   });
 
   test("case2", () => {
-    expect(throwBall([1, 2, 3, 4, 5, 6],	5)).toEqual(3);
+    expect(throwBall([1, 2, 3, 4, 5, 6], 5)).toEqual(3);
   });
 
   test("case3", () => {
-    expect(throwBall([1, 2, 3],	3)).toEqual(2);
+    expect(throwBall([1, 2, 3], 3)).toEqual(2);
   });
 });
 
@@ -102,6 +103,24 @@ describe("sharingMarble", () => {
   });
 
   test("case3", () => {
-    expect(sharingMarble(5,	4)).toEqual(5);
+    expect(sharingMarble(5, 4)).toEqual(5);
+  });
+});
+
+describe("alienLanguageDic", () => {
+  test("case1", () => {
+    expect(
+      alienLanguageDic(["p", "o", "s"], ["sod", "eocd", "qixm", "adio", "soo"])
+    ).toEqual(2);
+  });
+  test("case2", () => {
+    expect(
+      alienLanguageDic(["z", "d", "x"],	["def", "dww", "dzx", "loveaw"])
+    ).toEqual(1);
+  });
+  test("case3", () => {
+    expect(
+      alienLanguageDic(["s", "o", "m", "d"],	["moos", "dzx", "smm", "sunmmo", "som"])
+    ).toEqual(2);
   });
 });
