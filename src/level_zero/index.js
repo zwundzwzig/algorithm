@@ -7,6 +7,7 @@ import { throwBall } from "./throwBall"
 import { sharingMarble } from "./sharingMarble"
 import { alienLanguageDic } from "./alienLanguageDic"
 import { deleteZandChar } from "./deleteZandChar"
+import { locationOfCharacter } from "./locationOfCharacter"
 
 export default {
   fountain,
@@ -18,4 +19,5 @@ export default {
   sharingMarble,
   alienLanguageDic,
   deleteZandChar,
+  locationOfCharacter,
 };
