@@ -4,6 +4,7 @@ import { isCompositeNumber } from "./primeOrComposite";
 import { nearNumber } from "./nearNumber";
 import { binaryNumber } from "./binaryNumber"
 import { throwBall } from "./throwBall"
+import { sharingMarble } from "./sharingMarble"
 
 export default {
   fountain,
@@ -11,5 +12,6 @@ export default {
   isCompositeNumber,
   nearNumber,
   binaryNumber,
-  throwBall
+  throwBall,
+  sharingMarble,
 };

@@ -5,6 +5,7 @@ import {
   nearNumber,
   binaryNumber,
   throwBall,
+  sharingMarble,
 } from "../src/level_zero";
 
 describe("fountain", () => {
@@ -88,5 +89,19 @@ describe("throwBall", () => {
 
   test("case3", () => {
     expect(throwBall([1, 2, 3],	3)).toEqual(2);
+  });
+});
+
+describe("sharingMarble", () => {
+  test("case1", () => {
+    expect(sharingMarble(3, 2)).toEqual(3);
+  });
+
+  test("case2", () => {
+    expect(sharingMarble(5, 3)).toEqual(10);
+  });
+
+  test("case3", () => {
+    expect(sharingMarble(5,	4)).toEqual(5);
   });
 });
