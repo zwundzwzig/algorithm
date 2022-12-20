@@ -24,3 +24,5 @@ function alienLanguageDic(spell, dic) {
     return answer;
   }
 }
+
+export default { alienLanguageDic };

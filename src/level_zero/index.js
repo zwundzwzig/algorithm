@@ -6,6 +6,7 @@ import { binaryNumber } from "./binaryNumber"
 import { throwBall } from "./throwBall"
 import { sharingMarble } from "./sharingMarble"
 import { alienLanguageDic } from "./alienLanguageDic"
+import { deleteZandChar } from "./deleteZandChar"
 
 export default {
   fountain,
@@ -16,4 +17,5 @@ export default {
   throwBall,
   sharingMarble,
   alienLanguageDic,
+  deleteZandChar,
 };
