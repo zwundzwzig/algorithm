@@ -115,12 +115,29 @@ describe("alienLanguageDic", () => {
   });
   test("case2", () => {
     expect(
-      alienLanguageDic(["z", "d", "x"],	["def", "dww", "dzx", "loveaw"])
+      alienLanguageDic(["z", "d", "x"], ["def", "dww", "dzx", "loveaw"])
     ).toEqual(1);
   });
   test("case3", () => {
     expect(
-      alienLanguageDic(["s", "o", "m", "d"],	["moos", "dzx", "smm", "sunmmo", "som"])
+      alienLanguageDic(
+        ["s", "o", "m", "d"],
+        ["moos", "dzx", "smm", "sunmmo", "som"]
+      )
     ).toEqual(2);
+  });
+});
+
+describe("deleteZandChar", () => {
+  test("case1", () => {
+    expect(deleteZandChar("1 2 Z 3")).toEqual(4);
+  });
+
+  test("case2", () => {
+    expect(deleteZandChar("10 20 30 40")).toEqual(100);
+  });
+
+  test("case3", () => {
+    expect(deleteZandChar("-1 -2 -3 Z")).toEqual(-3);
   });
 });
