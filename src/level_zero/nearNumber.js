@@ -24,3 +24,5 @@ function nearNumber(array, n) {
 
   return theSmallest;
 }
+
+export default { nearNumber };
