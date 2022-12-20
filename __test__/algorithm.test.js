@@ -7,6 +7,7 @@ import {
   throwBall,
   sharingMarble,
   alienLanguageDic,
+  locationOfCharacter,
 } from "../src/level_zero";
 
 describe("fountain", () => {
@@ -139,5 +140,19 @@ describe("deleteZandChar", () => {
 
   test("case3", () => {
     expect(deleteZandChar("-1 -2 -3 Z")).toEqual(-3);
+  });
+});
+
+describe("locationOfCharacter", () => {
+  test("case1", () => {
+    expect(locationOfCharacter(["left", "right", "up", "right", "right"], [11, 11])).toEqual([2, 1]);
+  });
+
+  test("case2", () => {
+    expect(locationOfCharacter(["down", "down", "down", "down", "down"], [7, 9])).toEqual([0, -4]);
+  });
+
+  test("case3", () => {
+    expect(locationOfCharacter(["up"], [0, 0])).toEqual([1, 0]);
   });
 });
