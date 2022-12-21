@@ -146,11 +146,15 @@ describe("deleteZandChar", () => {
 
 describe("locationOfCharacter", () => {
   test("case1", () => {
-    expect(locationOfCharacter(["left", "right", "up", "right", "right"], [11, 11])).toEqual([2, 1]);
+    expect(
+      locationOfCharacter(["left", "right", "up", "right", "right"], [11, 11])
+    ).toEqual([2, 1]);
   });
 
   test("case2", () => {
-    expect(locationOfCharacter(["down", "down", "down", "down", "down"], [7, 9])).toEqual([0, -4]);
+    expect(
+      locationOfCharacter(["down", "down", "down", "down", "down"], [7, 9])
+    ).toEqual([0, -4]);
   });
 
   test("case3", () => {
@@ -169,5 +173,46 @@ describe("completionConditionOfTriangle", () => {
 
   test("case3", () => {
     expect(completionConditionOfTriangle([11, 7])).toEqual(13);
+  });
+});
+
+describe("logInComplete", () => {
+  test("case1", () => {
+    expect(
+      logInComplete(
+        ["meosseugi", "1234"],
+        [
+          ["rardss", "123"],
+          ["yyoom", "1234"],
+          ["meosseugi", "1234"],
+        ]
+      )
+    ).toEqual("login");
+  });
+
+  test("case2", () => {
+    expect(
+      logInComplete(
+        ["programmer01", "15789"],
+        [
+          ["programmer02", "111111"],
+          ["programmer00", "134"],
+          ["programmer01", "1145"],
+        ]
+      )
+    ).toEqual("wrong pw");
+  });
+
+  test("case3", () => {
+    expect(
+      logInComplete(
+        ["rabbit04", "98761"],
+        [
+          ["jaja11", "98761"],
+          ["krong0313", "29440"],
+          ["rabbit00", "111333"],
+        ]
+      )
+    ).toEqual("fail");
   });
 });
