@@ -216,3 +216,38 @@ describe("logInComplete", () => {
     ).toEqual("fail");
   });
 });
+
+describe("dimensionsOfRectangle", () => {
+  test("case1", () => {
+    expect(
+      dimensionsOfRectangle([
+        [1, 1],
+        [2, 1],
+        [2, 2],
+        [1, 2],
+      ])
+    ).toEqual(1);
+  });
+
+  test("case2", () => {
+    expect(
+      dimensionsOfRectangle([
+        [-1, -1],
+        [1, 1],
+        [1, -1],
+        [-1, 1],
+      ])
+    ).toEqual(4);
+  });
+
+  test("case3", () => {
+    expect(
+      dimensionsOfRectangle([
+        [0, 0],
+        [0, 4],
+        [1, 4],
+        [1, 0],
+      ])
+    ).toEqual(4);
+  });
+});

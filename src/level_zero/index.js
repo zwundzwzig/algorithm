@@ -10,6 +10,7 @@ import { deleteZandChar } from "./deleteZandChar"
 import { locationOfCharacter } from "./locationOfCharacter"
 import { completionConditionOfTriangle } from "./completionConditionOfTriangle"
 import { logInComplete } from "./logInComplete"
+import { dimensionsOfRectangle } from "./dimensionsOfRectangle"
 
 export default {
   fountain,
@@ -24,4 +25,5 @@ export default {
   locationOfCharacter,
   completionConditionOfTriangle,
   logInComplete,
+  dimensionsOfRectangle,
 };
