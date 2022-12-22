@@ -266,3 +266,17 @@ describe("pushTheString", () => {
     expect(pushTheString("JavaScript", "JavaScript")).toEqual(0);
   });
 });
+
+describe("chickenCoupon", () => {
+  test("case1", () => {
+    expect(chickenCoupon(100)).toEqual(11);
+  });
+
+  test("case2", () => {
+    expect(chickenCoupon(1081)).toEqual(120);
+  });
+
+  test("case3", () => {
+    expect(chickenCoupon(9)).toEqual(9);
+  });
+});
