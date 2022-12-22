@@ -280,3 +280,17 @@ describe("chickenCoupon", () => {
     expect(chickenCoupon(9)).toEqual(9);
   });
 });
+
+describe("finiteDecimal", () => {
+  test("case1", () => {
+    expect(finiteDecimal(7, 20)).toEqual(1);
+  });
+
+  test("case2", () => {
+    expect(finiteDecimal(11, 22)).toEqual(1);
+  });
+
+  test("case3", () => {
+    expect(finiteDecimal(12, 21)).toEqual(2);
+  });
+});

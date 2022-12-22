@@ -13,6 +13,7 @@ import { logInComplete } from "./logInComplete"
 import { dimensionsOfRectangle } from "./dimensionsOfRectangle"
 import { pushTheString } from "./pushTheString"
 import { chickenCoupon } from "./chickenCoupon"
+import { finiteDecimal } from "./finiteDecimal"
 
 export default {
   fountain,
@@ -30,4 +31,5 @@ export default {
   dimensionsOfRectangle,
   pushTheString,
   chickenCoupon,
+  finiteDecimal,
 };
