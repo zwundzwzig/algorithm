@@ -11,6 +11,7 @@ import { locationOfCharacter } from "./locationOfCharacter"
 import { completionConditionOfTriangle } from "./completionConditionOfTriangle"
 import { logInComplete } from "./logInComplete"
 import { dimensionsOfRectangle } from "./dimensionsOfRectangle"
+import { pushTheString } from "./pushTheString"
 
 export default {
   fountain,
@@ -26,4 +27,5 @@ export default {
   completionConditionOfTriangle,
   logInComplete,
   dimensionsOfRectangle,
+  pushTheString,
 };
