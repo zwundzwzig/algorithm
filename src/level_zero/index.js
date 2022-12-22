@@ -12,6 +12,7 @@ import { completionConditionOfTriangle } from "./completionConditionOfTriangle"
 import { logInComplete } from "./logInComplete"
 import { dimensionsOfRectangle } from "./dimensionsOfRectangle"
 import { pushTheString } from "./pushTheString"
+import { chickenCoupon } from "./chickenCoupon"
 
 export default {
   fountain,
@@ -28,4 +29,5 @@ export default {
   logInComplete,
   dimensionsOfRectangle,
   pushTheString,
+  chickenCoupon,
 };
