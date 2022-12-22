@@ -9,6 +9,7 @@ import {
   alienLanguageDic,
   locationOfCharacter,
   completionConditionOfTriangle,
+  pushTheString,
 } from "../src/level_zero";
 
 describe("fountain", () => {
@@ -249,5 +250,19 @@ describe("dimensionsOfRectangle", () => {
         [1, 0],
       ])
     ).toEqual(4);
+  });
+});
+
+describe("pushTheString", () => {
+  test("case1", () => {
+    expect(pushTheString("hello", "ohell")).toEqual(1);
+  });
+
+  test("case2", () => {
+    expect(pushTheString("apple", "elppa")).toEqual(-1);
+  });
+
+  test("case3", () => {
+    expect(pushTheString("JavaScript", "JavaScript")).toEqual(0);
   });
 });
