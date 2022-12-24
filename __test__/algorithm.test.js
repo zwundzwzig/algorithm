@@ -10,6 +10,9 @@ import {
   locationOfCharacter,
   completionConditionOfTriangle,
   pushTheString,
+  chickenCoupon,
+  finiteDecimal,
+  rankMathEnglish,
 } from "../src/level_zero";
 
 describe("fountain", () => {
@@ -292,5 +295,41 @@ describe("finiteDecimal", () => {
 
   test("case3", () => {
     expect(finiteDecimal(12, 21)).toEqual(2);
+  });
+});
+
+describe("rankMathEnglish", () => {
+  test("case1", () => {
+    expect(
+      rankMathEnglish([
+        [80, 70],
+        [90, 50],
+        [40, 70],
+        [50, 80],
+      ])
+    ).toEqual([1, 2, 4, 3]);
+  });
+
+  test("case2", () => {
+    expect(
+      rankMathEnglish([
+        [80, 70],
+        [70, 80],
+        [30, 50],
+        [90, 100],
+        [100, 90],
+        [100, 100],
+        [10, 30],
+      ])
+    ).toEqual([4, 4, 6, 2, 2, 1, 7]);
+  });
+
+  test("case3", () => {
+    expect(
+      rankMathEnglish([
+        [100, 100],
+        [0, 0],
+      ])
+    ).toEqual([1, 2]);
   });
 });

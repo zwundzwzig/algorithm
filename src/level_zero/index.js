@@ -14,6 +14,7 @@ import { dimensionsOfRectangle } from "./dimensionsOfRectangle"
 import { pushTheString } from "./pushTheString"
 import { chickenCoupon } from "./chickenCoupon"
 import { finiteDecimal } from "./finiteDecimal"
+import { rankMathEnglish } from "./rankMathEnglish"
 
 export default {
   fountain,
@@ -32,4 +33,5 @@ export default {
   pushTheString,
   chickenCoupon,
   finiteDecimal,
+  rankMathEnglish,
 };
