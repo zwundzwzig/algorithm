@@ -15,6 +15,7 @@ import { pushTheString } from "./pushTheString"
 import { chickenCoupon } from "./chickenCoupon"
 import { finiteDecimal } from "./finiteDecimal"
 import { rankMathEnglish } from "./rankMathEnglish"
+import { weirdSorting } from "./weirdSorting"
 
 export default {
   fountain,
@@ -34,4 +35,5 @@ export default {
   chickenCoupon,
   finiteDecimal,
   rankMathEnglish,
+  weirdSorting,
 };
