@@ -13,6 +13,7 @@ import {
   chickenCoupon,
   finiteDecimal,
   rankMathEnglish,
+  weirdSorting,
 } from "../src/level_zero";
 
 describe("fountain", () => {
@@ -331,5 +332,21 @@ describe("rankMathEnglish", () => {
         [0, 0],
       ])
     ).toEqual([1, 2]);
+  });
+});
+
+describe("weirdSorting", () => {
+  test("case1", () => {
+    expect(weirdSorting([[1, 2, 3, 4, 5, 6], 4])).toEqual([4, 5, 3, 6, 2, 1]);
+  });
+
+  test("case2", () => {
+    expect(weirdSorting([[10000, 20, 36, 47, 40, 6, 10, 7000], 30])).toEqual([
+      36, 40, 20, 47, 10, 6, 7000, 10000,
+    ]);
+  });
+
+  test("case3", () => {
+    expect(weirdSorting([[101, 1], 51])).toEqual([101, 1]);
   });
 });
