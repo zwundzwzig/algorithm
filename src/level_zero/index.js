@@ -18,6 +18,7 @@ import { rankMathEnglish } from "./rankMathEnglish"
 import { weirdSorting } from "./weirdSorting"
 import { without3 } from "./without3"
 import { polynomial } from "./polynomial"
+import { OXquiz } from "./OXquiz"
 
 export default {
   fountain,
@@ -40,4 +41,5 @@ export default {
   weirdSorting,
   without3,
   polynomial,
+  OXquiz,
 };

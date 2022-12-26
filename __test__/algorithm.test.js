@@ -16,6 +16,7 @@ import {
   weirdSorting,
   without3,
   polynomial,
+  OXquiz,
 } from "../src/level_zero";
 
 describe("fountain", () => {
@@ -378,5 +379,19 @@ describe("polynomial", () => {
 
   test("case3", () => {
     expect(polynomial("010 + 0020x + 1")).toEqual("20x + 11");
+  });
+});
+
+describe("OXquiz", () => {
+  test("case1", () => {
+    expect(OXquiz(["3 - 4 = -3", "5 + 6 = 11"])).toEqual(["X", "O"]);
+  });
+
+  test("case2", () => {
+    expect(OXquiz(["19 - 6 = 13", "5 + 66 = 71", "5 - 15 = 63", "3 - 1 = 2"])).toEqual(["O", "O", "X", "O"]);
+  });
+
+  test("case3", () => {
+    expect(OXquiz(["1 + 1 = 2", "2 - 4 = 2"])).toEqual(["O", "X"]);
   });
 });
