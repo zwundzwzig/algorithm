@@ -14,6 +14,7 @@ import {
   finiteDecimal,
   rankMathEnglish,
   weirdSorting,
+  without3,
 } from "../src/level_zero";
 
 describe("fountain", () => {
@@ -348,5 +349,19 @@ describe("weirdSorting", () => {
 
   test("case3", () => {
     expect(weirdSorting([[101, 1], 51])).toEqual([101, 1]);
+  });
+});
+
+describe("without3", () => {
+  test("case1", () => {
+    expect(without3(15)).toEqual(25);
+  });
+
+  test("case2", () => {
+    expect(without3(40)).toEqual(76);
+  });
+
+  test("case3", () => {
+    expect(without3(10)).toEqual(16);
   });
 });

@@ -16,6 +16,7 @@ import { chickenCoupon } from "./chickenCoupon"
 import { finiteDecimal } from "./finiteDecimal"
 import { rankMathEnglish } from "./rankMathEnglish"
 import { weirdSorting } from "./weirdSorting"
+import { without3 } from "./without3"
 
 export default {
   fountain,
@@ -36,4 +37,5 @@ export default {
   finiteDecimal,
   rankMathEnglish,
   weirdSorting,
+  without3,
 };
