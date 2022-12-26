@@ -17,6 +17,7 @@ import { finiteDecimal } from "./finiteDecimal"
 import { rankMathEnglish } from "./rankMathEnglish"
 import { weirdSorting } from "./weirdSorting"
 import { without3 } from "./without3"
+import { polynomial } from "./polynomial"
 
 export default {
   fountain,
@@ -38,4 +39,5 @@ export default {
   rankMathEnglish,
   weirdSorting,
   without3,
+  polynomial,
 };

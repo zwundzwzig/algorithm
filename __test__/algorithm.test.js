@@ -15,6 +15,7 @@ import {
   rankMathEnglish,
   weirdSorting,
   without3,
+  polynomial,
 } from "../src/level_zero";
 
 describe("fountain", () => {
@@ -363,5 +364,19 @@ describe("without3", () => {
 
   test("case3", () => {
     expect(without3(10)).toEqual(16);
+  });
+});
+
+describe("polynomial", () => {
+  test("case1", () => {
+    expect(polynomial("2 + 005 + x")).toEqual("4x + 7");
+  });
+
+  test("case2", () => {
+    expect(polynomial("2 + 9")).toEqual("7");
+  });
+
+  test("case3", () => {
+    expect(polynomial("010 + 0020x + 1")).toEqual("20x + 11");
   });
 });
