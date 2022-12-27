@@ -17,6 +17,7 @@ import {
   without3,
   polynomial,
   OXquiz,
+  checkResultOfReport,
 } from "../src/level_zero";
 
 describe("fountain", () => {
@@ -388,10 +389,40 @@ describe("OXquiz", () => {
   });
 
   test("case2", () => {
-    expect(OXquiz(["19 - 6 = 13", "5 + 66 = 71", "5 - 15 = 63", "3 - 1 = 2"])).toEqual(["O", "O", "X", "O"]);
+    expect(
+      OXquiz(["19 - 6 = 13", "5 + 66 = 71", "5 - 15 = 63", "3 - 1 = 2"])
+    ).toEqual(["O", "O", "X", "O"]);
   });
 
   test("case3", () => {
     expect(OXquiz(["1 + 1 = 2", "2 - 4 = 2"])).toEqual(["O", "X"]);
+  });
+});
+
+describe("checkResultOfReport", () => {
+  test("case1", () => {
+    expect(
+      checkResultOfReport(
+        ["muzi", "frodo", "apeach", "neo"],
+        ["muzi frodo", "apeach frodo", "frodo neo", "muzi neo", "apeach muzi"],
+        2
+      )
+    ).toEqual([2, 1, 1, 0]);
+  });
+
+  test("case2", () => {
+    expect(
+      checkResultOfReport(
+        ["con", "ryan"],
+        ["ryan con", "ryan con", "ryan con", "ryan con"],
+        3
+      )
+    ).toEqual([0, 0]);
+  });
+
+  test("case3", () => {
+    expect(
+      checkResultOfReport(["ho", "rang"], ["ho rang", "rang, ho"], 1)
+    ).toEqual([1, 1]);
   });
 });
