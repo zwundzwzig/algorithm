@@ -19,6 +19,7 @@ import {
   OXquiz,
   checkResultOfReport,
   nextNumber,
+  arithmeticProgression,
 } from "../src/level_zero";
 
 describe("fountain", () => {
@@ -439,5 +440,19 @@ describe("nextNumber", () => {
 
   test("case3", () => {
     expect(nextNumber([1, 10, 100])).toEqual(1000);
+  });
+});
+
+describe("arithmeticProgression", () => {
+  test("case1", () => {
+    expect(arithmeticProgression(5, 15)).toEqual([1, 2, 3, 4, 5]);
+  });
+
+  test("case2", () => {
+    expect(arithmeticProgression(4, 14)).toEqual([2, 3, 4, 5]);
+  });
+
+  test("case3", () => {
+    expect(arithmeticProgression(5, 5)).toEqual([-1, 0, 1, 2, 3]);
   });
 });
