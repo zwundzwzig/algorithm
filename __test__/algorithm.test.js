@@ -18,6 +18,7 @@ import {
   polynomial,
   OXquiz,
   checkResultOfReport,
+  nextNumber,
 } from "../src/level_zero";
 
 describe("fountain", () => {
@@ -424,5 +425,19 @@ describe("checkResultOfReport", () => {
     expect(
       checkResultOfReport(["ho", "rang"], ["ho rang", "rang, ho"], 1)
     ).toEqual([1, 1]);
+  });
+});
+
+describe("nextNumber", () => {
+  test("case1", () => {
+    expect(nextNumber([1, 2, 3, 4])).toEqual(5);
+  });
+
+  test("case2", () => {
+    expect(nextNumber([2, 4, 8])).toEqual(16);
+  });
+
+  test("case3", () => {
+    expect(nextNumber([1, 10, 100])).toEqual(1000);
   });
 });

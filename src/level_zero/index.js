@@ -19,6 +19,7 @@ import { weirdSorting } from "./weirdSorting"
 import { without3 } from "./without3"
 import { polynomial } from "./polynomial"
 import { OXquiz } from "./OXquiz"
+import { nextNumber } from "./nextNumber"
 
 export default {
   fountain,
@@ -42,4 +43,5 @@ export default {
   without3,
   polynomial,
   OXquiz,
+  nextNumber,
 };
