@@ -20,6 +20,7 @@ import { without3 } from "./without3"
 import { polynomial } from "./polynomial"
 import { OXquiz } from "./OXquiz"
 import { nextNumber } from "./nextNumber"
+import { arithmeticProgression } from "./arithmeticProgression"
 
 export default {
   fountain,
@@ -44,4 +45,5 @@ export default {
   polynomial,
   OXquiz,
   nextNumber,
+  arithmeticProgression,
 };
