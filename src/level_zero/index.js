@@ -21,6 +21,7 @@ import { polynomial } from "./polynomial"
 import { OXquiz } from "./OXquiz"
 import { nextNumber } from "./nextNumber"
 import { arithmeticProgression } from "./arithmeticProgression"
+import { safeZone } from "./safeZone"
 
 export default {
   fountain,
@@ -46,4 +47,5 @@ export default {
   OXquiz,
   nextNumber,
   arithmeticProgression,
+  safeZone,
 };

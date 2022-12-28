@@ -20,6 +20,7 @@ import {
   checkResultOfReport,
   nextNumber,
   arithmeticProgression,
+  safeZone,
 } from "../src/level_zero";
 
 describe("fountain", () => {
@@ -454,5 +455,44 @@ describe("arithmeticProgression", () => {
 
   test("case3", () => {
     expect(arithmeticProgression(5, 5)).toEqual([-1, 0, 1, 2, 3]);
+  });
+});
+
+describe("safeZone", () => {
+  test("case1", () => {
+    expect(
+      safeZone([
+        [0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0],
+        [0, 0, 1, 0, 0],
+        [0, 0, 0, 0, 0],
+      ])
+    ).toEqual(16);
+  });
+
+  test("case2", () => {
+    expect(
+      safeZone([
+        [0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0],
+        [0, 0, 1, 1, 0],
+        [0, 0, 0, 0, 0],
+      ])
+    ).toEqual(13);
+  });
+
+  test("case3", () => {
+    expect(
+      safeZone([
+        [1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1],
+      ])
+    ).toEqual(0);
   });
 });
