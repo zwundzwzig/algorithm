@@ -6,3 +6,5 @@ function nextNumber(common) {
     ? common[common.length - 1] + (common[2] - common[1])
     : common[common.length - 1] * (common[2] / common[1]);
 }
+
+export default { nextNumber };

@@ -22,6 +22,7 @@ import { OXquiz } from "./OXquiz"
 import { nextNumber } from "./nextNumber"
 import { arithmeticProgression } from "./arithmeticProgression"
 import { safeZone } from "./safeZone"
+import { overlappingLine } from "./overlappingLine"
 
 export default {
   fountain,
@@ -48,4 +49,5 @@ export default {
   nextNumber,
   arithmeticProgression,
   safeZone,
+  overlappingLine,
 };
