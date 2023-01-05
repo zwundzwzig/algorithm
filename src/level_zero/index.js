@@ -23,6 +23,7 @@ import { nextNumber } from "./nextNumber"
 import { arithmeticProgression } from "./arithmeticProgression"
 import { safeZone } from "./safeZone"
 import { overlappingLine } from "./overlappingLine"
+import { parallel } from "./parallel"
 
 export default {
   fountain,
@@ -50,4 +51,5 @@ export default {
   arithmeticProgression,
   safeZone,
   overlappingLine,
+  parallel,
 };
