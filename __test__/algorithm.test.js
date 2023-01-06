@@ -21,7 +21,8 @@ import {
   nextNumber,
   arithmeticProgression,
   safeZone,
-} from "../src/level_zero";
+} from "../programmers/level_0";
+import { fullHouse } from "../others";
 
 describe("fountain", () => {
   test("case1", () => {
