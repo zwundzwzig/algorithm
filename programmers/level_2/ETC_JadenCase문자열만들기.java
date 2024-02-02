@@ -1,9 +1,9 @@
-package level_two;
+package level_2;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class JadenCase문자열만들기 {
+public class ETC_JadenCase문자열만들기 {
   public String solution(String s) {
     String answer = new String();
 

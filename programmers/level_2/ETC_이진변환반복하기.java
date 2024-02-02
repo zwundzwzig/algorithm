@@ -1,14 +1,14 @@
-package level_two;
+package level_2;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class 이진변환반복하기 {
+public class ETC_이진변환반복하기 {
   public int[] solution(String s) {
     int[] answer = new int[2];
 
     while (!s.equals("1")) {
-      String temp = s.replaceAll("0", "");
+      String temp = s.replace("0", "");
       answer[1] += s.length() - temp.length();
       s = Integer.toString(temp.length(), 2);
       answer[0]++;

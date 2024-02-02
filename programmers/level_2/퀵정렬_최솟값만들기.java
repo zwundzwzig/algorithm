@@ -1,11 +1,11 @@
-package level_two;
+package level_2;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 
-public class 최솟값만들기 {
+public class 퀵정렬_최솟값만들기 {
   public int solution(int []A, int []B) {
     int answer = 0;
 

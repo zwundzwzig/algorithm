@@ -1,10 +1,10 @@
-package level_two;
+package level_2;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class 최댓값과최솟값 {
+public class 정렬_최댓값과최솟값 {
   public String solution(String s) {
     List<Integer> list = Arrays.stream(s.split(" "))
             .map(Integer::parseInt)

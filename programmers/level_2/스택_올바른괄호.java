@@ -1,11 +1,11 @@
-package level_two;
+package level_2;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.Stack;
 
-public class 올바른괄호 {
+public class 스택_올바른괄호 {
 
   boolean solution(String s) {
     Stack<String> stack = new Stack<>();

@@ -8,7 +8,7 @@
 // 주어진 카드의 숫자를 순서대로 담는 1차원 정수 배열 cards가 매개변수로 주어지고,
 // 풇하우스를 완성해 최대 몇 점을 받을 수 있는지 return하도록 solution 함수를 완성시키세요.
 
-function fullHouse(cards) {
+function _fullHouse(cards) {
   if (cards.length < 5) return 0;
 
   let countFullHouse = new Map();
@@ -30,4 +30,4 @@ function fullHouse(cards) {
   }
 }
 
-export default { fullHouse };
+export default { fullHouse: _fullHouse };
