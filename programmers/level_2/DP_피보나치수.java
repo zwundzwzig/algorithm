@@ -3,7 +3,7 @@ package level_2;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class DP_피보나수 {
+public class DP_피보나치수 {
   public int solution(int n) {
     int[] dp = new int[n + 1];
     dp[0] = 0;
