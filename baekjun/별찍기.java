@@ -51,7 +51,7 @@ public class 별찍기 {
 
   public static void 이사사일(String[] args) {
     Scanner sc = new Scanner(System.in);
-    int N = sc.nextInt();
+    int N = sc.nextInt();gi
     sc.close();
 
     for (int i = 0; i < N; i++) {
@@ -63,6 +63,48 @@ public class 별찍기 {
       }
       System.out.println();
     }
+  }
+
+  public static void 이사사이(String[] args) throws IOException {
+    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    int n = Integer.parseInt(br.readLine());
+    StringBuilder sb = new StringBuilder();
+
+    for (int i = 1; i <= n; i++) {
+      for (int j = 1; j <= n-i; j++) {
+        sb.append(" ");
+      }
+
+      for (int j = 1; j <= 2*i-1; j++) {
+        sb.append("*");
+      }
+
+      sb.append("\n");
+    }
+
+    System.out.print(sb);
+    br.close();
+  }
+
+  public static void 이사사삼(String[] args) throws IOException {
+    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    int n = Integer.parseInt(br.readLine());
+    StringBuilder sb = new StringBuilder();
+
+    for (int i = 1; i <= n; i++) {
+      for (int j = 1; j < i; j++) {
+        sb.append(" ");
+      }
+
+      for (int j = (2*n) - (i*2-1); j > 0; j--) {
+        sb.append("*");
+      }
+
+      sb.append("\n");
+    }
+
+    System.out.print(sb);
+    br.close();
   }
 
   @Test
