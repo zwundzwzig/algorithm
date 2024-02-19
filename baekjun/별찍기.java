@@ -51,7 +51,7 @@ public class 별찍기 {
 
   public static void 이사사일(String[] args) {
     Scanner sc = new Scanner(System.in);
-    int N = sc.nextInt();gi
+    int N = sc.nextInt();
     sc.close();
 
     for (int i = 0; i < N; i++) {
