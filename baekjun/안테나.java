@@ -47,7 +47,7 @@ public class 안테나 {
 
         sum += Math.abs(houses[j] - target);
       }
-          t.add(target + " :: " + sum);
+      t.add(target + " :: " + sum);
 
       if (sum < SUM) {
         answer = target;

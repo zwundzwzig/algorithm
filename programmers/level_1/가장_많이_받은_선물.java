@@ -10,19 +10,16 @@ class 가장_많이_받은_선물 {
   private HashMap<String, Integer> dic = new HashMap<>();
   private int[][] relation;
   private int[] degree;
-//  private HashMap<String, Integer> degreeMap = new HashMap<>();
   private String sender;
   private String receiver;
 
   public int solution(String[] friends, String[] gifts) {
-    // HashMap<String, Integer> answer = new HashMap<>();
     int answer = 0;
     int size = friends.length;
     degree = new int[size];
     relation = new int[size][size];
 
     for (int i = 0; i < size; i++) {
-      // answer.putIfAbsent(friends[i], 0);
       dic.putIfAbsent(friends[i], i);
     }
 
@@ -41,7 +38,6 @@ class 가장_많이_받은_선물 {
                 (relation[i][j] == relation[j][i]
                         && degree[i] > degree[j])
         ) {
-          // answer.put(sender, answer.getOrDefault(sender, 0) + 1);
           temp++;
         }
 
@@ -49,10 +45,6 @@ class 가장_많이_받은_선물 {
       }
     }
 
-    // return answer.values().stream()
-    // .sorted(Comparator.reverseOrder())
-    // .findFirst()
-    // .orElse(-1);
     return answer;
   }
 
