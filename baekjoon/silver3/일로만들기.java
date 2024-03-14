@@ -1,8 +1,10 @@
+package silver3;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class 디피 {
+public class 일로만들기 {
 class 일사육삼 {
   private Integer[] dp;
 

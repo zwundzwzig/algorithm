@@ -1,4 +1,4 @@
-// 문제
+package gold5;// 문제
 // KOI 부설 과학연구소에서는 많은 종류의 산성 용액과 알칼리성 용액을 보유하고 있다.
 // 각 용액에는 그 용액의 특성을 나타내는 하나의 정수가 주어져있다.
 // 산성 용액의 특성값은 1부터 1,000,000,000까지의 양의 정수로 나타내고,
@@ -28,8 +28,8 @@
 import java.util.*;
 import java.io.*;
 
-public class TwoWater {
-    public static void main(String[] args) throws Exception {
+public class 두용액 {
+    public static void 이공사칠(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int arrLength = Integer.parseInt(br.readLine());
         StringTokenizer st = new StringTokenizer(br.readLine());

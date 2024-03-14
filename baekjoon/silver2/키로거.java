@@ -1,3 +1,5 @@
+package silver2;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.IOException;
@@ -5,8 +7,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
 
-class 오삼구칠 {
-  public static void main(String[] args) throws IOException {
+class 키로거 {
+  public static void 오삼구칠(String[] args) throws IOException {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
     int T = Integer.parseInt(br.readLine()); // 테스트 케이스 개수

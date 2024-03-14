@@ -1,12 +1,14 @@
+package gold5;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.io.*;
 import java.util.StringTokenizer;
 
-public class 일구오삼구 {
+public class 사과나무 {
 
-  public void main(String[] args) throws IOException {
+  public void 일구오삼구(String[] args) throws IOException {
     BufferedReader br = new BufferedReader((new InputStreamReader(System.in)));
     StringTokenizer st = new StringTokenizer(br.readLine());
     int sizeAppleTree = Integer.parseInt(st.nextToken());
@@ -36,16 +38,16 @@ public class 일구오삼구 {
     ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     System.setOut(new PrintStream(outContent));
 
-    main(new String[]{first});
+    일구오삼구(new String[]{first});
     String[] result = outContent.toString().split(System.lineSeparator());
     Assertions.assertEquals("YES", result[0]);
-    main(new String[]{second});
+    일구오삼구(new String[]{second});
     result = outContent.toString().split(System.lineSeparator());
     Assertions.assertEquals("NO", result[0]);
-    main(new String[]{third});
+    일구오삼구(new String[]{third});
     result = outContent.toString().split(System.lineSeparator());
     Assertions.assertEquals("YES", result[0]);
-    main(new String[]{fourth});
+    일구오삼구(new String[]{fourth});
     result = outContent.toString().split(System.lineSeparator());
     Assertions.assertEquals("NO", result[0]);
   }

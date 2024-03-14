@@ -1,10 +1,12 @@
+package silver3;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.io.*;
 import java.util.StringTokenizer;
 
-public class 이육공육 {
+public class 바이러스 {
   static boolean[][] graph;
   static boolean[] visited;
   static int answer;

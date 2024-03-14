@@ -1,4 +1,4 @@
-// 문제
+package silver3;// 문제
 // 수 N개가 주어졌을 때, i번째 수부터 j번째 수까지 합을 구하는 프로그램을 작성하시오.
 
 // 입력
@@ -9,23 +9,23 @@
 
 import java.util.*;
 
-public class SumOfSection4 {
+public class 구간합구하기4 {
     static int[] arr;
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+    public static void 일일육오구(String[] args) {
+			Scanner sc = new Scanner(System.in);
         
-		int n = sc.nextInt();
-		int m = sc.nextInt();
-        
-		arr = new int[n+1];
-		for(int i = 1; i <= n; i++) {
-			arr[i] = arr[i-1] + sc.nextInt();
-		}
-		
-		for(int i = 0; i < m; i++) {
-			int a = sc.nextInt();
-			int b = sc.nextInt();
-			System.out.println(arr[b] - arr[a-1]);
-		}
+			int n = sc.nextInt();
+			int m = sc.nextInt();
+
+			arr = new int[n+1];
+			for(int i = 1; i <= n; i++) {
+				arr[i] = arr[i-1] + sc.nextInt();
+			}
+
+			for(int i = 0; i < m; i++) {
+				int a = sc.nextInt();
+				int b = sc.nextInt();
+				System.out.println(arr[b] - arr[a-1]);
+			}
     }
 }

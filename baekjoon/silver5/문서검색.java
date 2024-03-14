@@ -1,3 +1,5 @@
+package silver5;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -13,32 +15,20 @@ public class 문서검색 {
     String document = br.readLine();
     String target = br.readLine();
     br.close();
-    int documentLength = document.length();
-    int targetLength = target.length();
-    int count = 0;
+    int answer = 0;
 
-    for (int i = 0; i <= documentLength - targetLength; i++) {
-      boolean found = true;
-      for (int j = 0; j < targetLength; j++) {
-        if (document.charAt(i + j) != target.charAt(j)) {
-          found = false;
-          break;
-        }
-      }
-
-      if (found) {
-        count++;
-        i += targetLength - 1;
-      }
+    while (document.contains(target)) {
+      answer++;
+      document = document.replaceFirst(target, " ");
     }
 
-    System.out.println(count);
+    System.out.println(answer);
   }
 
   @Test
   public void 정답_일오사삼() throws IOException {
-    String input = "a a a a a\n" +
-            "a a";
+    String input = "aabb\n" +
+            "ab";
     InputStream in = new ByteArrayInputStream(input.getBytes());
     System.setIn(in);
 
@@ -48,7 +38,7 @@ public class 문서검색 {
 
     일오사삼(new String[]{input});
     result = outContent.toString().split(System.lineSeparator());
-    Assertions.assertEquals("2", result[0]);
+    Assertions.assertEquals("1", result[0]);
   }
 
 }

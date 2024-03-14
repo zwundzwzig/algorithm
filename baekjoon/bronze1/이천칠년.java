@@ -1,10 +1,12 @@
+package bronze1;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.io.*;
 import java.util.StringTokenizer;
 
-public class 구현 {
+public class 이천칠년 {
   public static void 일구이사(String[] args) throws IOException {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     StringTokenizer st = new StringTokenizer(br.readLine());
