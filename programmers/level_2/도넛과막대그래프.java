@@ -3,15 +3,13 @@ package level_2;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class 도넛과막대그래프 {
 
-  private static List<List<Integer>> graph;
-  private static boolean[] visited;
-  private static int[] countIncoming;
+  private static Map<Integer, List<Integer>> graph = new HashMap<>();
+  private static Map<Integer, Boolean> visited = new HashMap<>();
+  private static Map<Integer, Integer> countIncoming = new HashMap<>();
 
   private static String EIGHT = "EIGHT", BAR = "BAR";
 
@@ -32,48 +30,46 @@ public class 도넛과막대그래프 {
   }
 
   private void initGraph(int[][] edges) {
-    int maxVertex = 0;
-
     for (int[] edge : edges) {
-      maxVertex = Math.max(maxVertex, Math.max(edge[0], edge[1]));
-    }
+      int from = edge[0];
+      int to = edge[1];
 
-    visited = new boolean[maxVertex + 1];
-    countIncoming = new int[maxVertex + 1];
-    graph = new ArrayList<>(maxVertex + 1);
+      visited.put(from, false);
+      visited.put(to, false);
+      graph.putIfAbsent(from, new LinkedList<>());
+      graph.putIfAbsent(to, null);
+      graph.get(from).add(to);
 
-    for (int i = 0; i <= maxVertex; i++) {
-      graph.add(new LinkedList<>());
-    }
-
-    for (int i = 0; i < edges.length; i++) {
-      graph.get(edges[i][0]).add(edges[i][1]);
-      countIncoming[edges[i][1]]++;
+      countIncoming.put(to, countIncoming.getOrDefault(to, 1) + 1);
     }
   }
 
   private int findCreatedVertex() {
     int createdVertex = 0;
-    for (int i = 1; i < graph.size(); i++) {
-      if (graph.get(i).size() >= 2 && countIncoming[i] == 0) {
-        createdVertex = i;
+    for (int key : graph.keySet()) {
+      if (graph.get(key) != null && graph.get(key).size() >= 2 && countIncoming.get(key) == null) {
+        createdVertex = key;
         break;
       }
     }
-    visited[createdVertex] = true;
+    visited.put(createdVertex, true);
     return createdVertex;
   }
 
   private int findGraph(String param) {
     int count = 0;
-    for (int i = 1; i < graph.size(); i++) {
-      if (!visited[i]) {
-        if (param.equals(BAR) && graph.get(i).isEmpty()) {
+    for (int key : graph.keySet()) {
+      if (!visited.get(key)) {
+        if (param.equals(BAR) && graph.get(key) == null) {
           count++;
-          visited[i] = true;
-        } else if (param.equals(EIGHT) && graph.get(i).size() == 2 && countIncoming[i] == 2) {
+          visited.put(key, true);
+        } else if (param.equals(EIGHT)
+                && graph.get(key) != null
+                && countIncoming.get(key) != null
+                && graph.get(key).size() == 2
+                && countIncoming.get(key) == 2) {
           count++;
-          visited[i] = true;
+          visited.put(key, true);
         }
       }
     }
@@ -82,22 +78,33 @@ public class 도넛과막대그래프 {
 
   private void removeEdgesFromCreatedVertex(int vertex) {
     for (int end : graph.get(vertex)) {
-      countIncoming[end]--;
+      countIncoming.put(end, countIncoming.get(end) - 1);
     }
-    graph.set(vertex, null);
+    graph.put(vertex, null);
   }
 
   @Test
-  public void 정답() {
+  public void 정답1() {
     Assertions.assertEquals(2, solution(new int[][]{{2, 3}, {4, 3}, {1, 1}, {2, 1}})[0]);
     Assertions.assertEquals(1, solution(new int[][]{{2, 3}, {4, 3}, {1, 1}, {2, 1}})[1]);
     Assertions.assertEquals(1, solution(new int[][]{{2, 3}, {4, 3}, {1, 1}, {2, 1}})[2]);
     Assertions.assertEquals(0, solution(new int[][]{{2, 3}, {4, 3}, {1, 1}, {2, 1}})[3]);
+  }
 
+  @Test
+  public void 정답2() {
     Assertions.assertEquals(4, solution(new int[][]{{4, 11}, {1, 12}, {8, 3}, {12, 7}, {4, 2}, {7, 11}, {4, 8}, {9, 6}, {10, 11}, {6, 10}, {3, 5}, {11, 1}, {5, 3}, {11, 9}, {3, 8}})[0]);
     Assertions.assertEquals(0, solution(new int[][]{{4, 11}, {1, 12}, {8, 3}, {12, 7}, {4, 2}, {7, 11}, {4, 8}, {9, 6}, {10, 11}, {6, 10}, {3, 5}, {11, 1}, {5, 3}, {11, 9}, {3, 8}})[1]);
     Assertions.assertEquals(1, solution(new int[][]{{4, 11}, {1, 12}, {8, 3}, {12, 7}, {4, 2}, {7, 11}, {4, 8}, {9, 6}, {10, 11}, {6, 10}, {3, 5}, {11, 1}, {5, 3}, {11, 9}, {3, 8}})[2]);
     Assertions.assertEquals(2, solution(new int[][]{{4, 11}, {1, 12}, {8, 3}, {12, 7}, {4, 2}, {7, 11}, {4, 8}, {9, 6}, {10, 11}, {6, 10}, {3, 5}, {11, 1}, {5, 3}, {11, 9}, {3, 8}})[3]);
+  }
+
+  @Test
+  public void 정답() {
+    Assertions.assertEquals(4, solution(new int[][]{{4, 11}, {1, 12}, {8, 3}, {12, 7}, {4, 25}, {7, 11}, {4, 8}, {9, 6}, {10, 11}, {6, 10}, {3, 5}, {11, 1}, {5, 3}, {11, 9}, {3, 8}})[0]);
+    Assertions.assertEquals(0, solution(new int[][]{{4, 11}, {1, 12}, {8, 3}, {12, 7}, {4, 25}, {7, 11}, {4, 8}, {9, 6}, {10, 11}, {6, 10}, {3, 5}, {11, 1}, {5, 3}, {11, 9}, {3, 8}})[1]);
+    Assertions.assertEquals(1, solution(new int[][]{{4, 11}, {1, 12}, {8, 3}, {12, 7}, {4, 25}, {7, 11}, {4, 8}, {9, 6}, {10, 11}, {6, 10}, {3, 5}, {11, 1}, {5, 3}, {11, 9}, {3, 8}})[2]);
+    Assertions.assertEquals(2, solution(new int[][]{{4, 11}, {1, 12}, {8, 3}, {12, 7}, {4, 25}, {7, 11}, {4, 8}, {9, 6}, {10, 11}, {6, 10}, {3, 5}, {11, 1}, {5, 3}, {11, 9}, {3, 8}})[3]);
   }
 
 }

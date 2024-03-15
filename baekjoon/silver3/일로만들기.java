@@ -1,11 +1,11 @@
 package silver3;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
+import java.io.*;
 
 public class 일로만들기 {
-class 일사육삼 {
   private Integer[] dp;
 
   public void 일사육삼(String[] args) throws IOException {
@@ -37,5 +37,18 @@ class 일사육삼 {
     return dp[n];
   }
 
-}
+  @Test
+  public void 정답_일사육삼() throws IOException {
+    String input = "10";
+    InputStream in = new ByteArrayInputStream(input.getBytes());
+    System.setIn(in);
+
+    ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+    System.setOut(new PrintStream(outContent));
+
+    일사육삼(new String[]{input});
+    String[] result = outContent.toString().split(System.lineSeparator());
+    Assertions.assertEquals("3", result[0]);
+  }
+
 }
