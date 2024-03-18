@@ -40,10 +40,9 @@ public class 도넛과막대그래프 {
       graph.putIfAbsent(to, null);
       graph.get(from).add(to);
 
-      countIncoming.put(to, countIncoming.getOrDefault(to, 1) + 1);
+      countIncoming.put(to, countIncoming.getOrDefault(to, 0) + 1);
     }
   }
-
   private int findCreatedVertex() {
     int createdVertex = 0;
     for (int key : graph.keySet()) {
@@ -85,26 +84,32 @@ public class 도넛과막대그래프 {
 
   @Test
   public void 정답1() {
-    Assertions.assertEquals(2, solution(new int[][]{{2, 3}, {4, 3}, {1, 1}, {2, 1}})[0]);
-    Assertions.assertEquals(1, solution(new int[][]{{2, 3}, {4, 3}, {1, 1}, {2, 1}})[1]);
-    Assertions.assertEquals(1, solution(new int[][]{{2, 3}, {4, 3}, {1, 1}, {2, 1}})[2]);
-    Assertions.assertEquals(0, solution(new int[][]{{2, 3}, {4, 3}, {1, 1}, {2, 1}})[3]);
+    int[] answer = solution(new int[][]{{4, 11}, {1, 12}, {8, 3}, {12, 7}, {4, 25}, {7, 11}, {4, 8}, {9, 6}, {10, 11}, {6, 10}, {3, 5}, {11, 1}, {5, 3}, {11, 9}, {3, 8}});
+
+    Assertions.assertEquals(4, answer[0]);
+    Assertions.assertEquals(0, answer[1]);
+    Assertions.assertEquals(1, answer[2]);
+    Assertions.assertEquals(2, answer[3]);
   }
 
   @Test
   public void 정답2() {
-    Assertions.assertEquals(4, solution(new int[][]{{4, 11}, {1, 12}, {8, 3}, {12, 7}, {4, 2}, {7, 11}, {4, 8}, {9, 6}, {10, 11}, {6, 10}, {3, 5}, {11, 1}, {5, 3}, {11, 9}, {3, 8}})[0]);
-    Assertions.assertEquals(0, solution(new int[][]{{4, 11}, {1, 12}, {8, 3}, {12, 7}, {4, 2}, {7, 11}, {4, 8}, {9, 6}, {10, 11}, {6, 10}, {3, 5}, {11, 1}, {5, 3}, {11, 9}, {3, 8}})[1]);
-    Assertions.assertEquals(1, solution(new int[][]{{4, 11}, {1, 12}, {8, 3}, {12, 7}, {4, 2}, {7, 11}, {4, 8}, {9, 6}, {10, 11}, {6, 10}, {3, 5}, {11, 1}, {5, 3}, {11, 9}, {3, 8}})[2]);
-    Assertions.assertEquals(2, solution(new int[][]{{4, 11}, {1, 12}, {8, 3}, {12, 7}, {4, 2}, {7, 11}, {4, 8}, {9, 6}, {10, 11}, {6, 10}, {3, 5}, {11, 1}, {5, 3}, {11, 9}, {3, 8}})[3]);
+    int[] answer = solution(new int[][]{{2, 3}, {4, 3}, {1, 1}, {2, 1}});
+
+    Assertions.assertEquals(2, answer[0]);
+    Assertions.assertEquals(1, answer[1]);
+    Assertions.assertEquals(1, answer[2]);
+    Assertions.assertEquals(0, answer[3]);
   }
 
   @Test
-  public void 정답() {
-    Assertions.assertEquals(4, solution(new int[][]{{4, 11}, {1, 12}, {8, 3}, {12, 7}, {4, 25}, {7, 11}, {4, 8}, {9, 6}, {10, 11}, {6, 10}, {3, 5}, {11, 1}, {5, 3}, {11, 9}, {3, 8}})[0]);
-    Assertions.assertEquals(0, solution(new int[][]{{4, 11}, {1, 12}, {8, 3}, {12, 7}, {4, 25}, {7, 11}, {4, 8}, {9, 6}, {10, 11}, {6, 10}, {3, 5}, {11, 1}, {5, 3}, {11, 9}, {3, 8}})[1]);
-    Assertions.assertEquals(1, solution(new int[][]{{4, 11}, {1, 12}, {8, 3}, {12, 7}, {4, 25}, {7, 11}, {4, 8}, {9, 6}, {10, 11}, {6, 10}, {3, 5}, {11, 1}, {5, 3}, {11, 9}, {3, 8}})[2]);
-    Assertions.assertEquals(2, solution(new int[][]{{4, 11}, {1, 12}, {8, 3}, {12, 7}, {4, 25}, {7, 11}, {4, 8}, {9, 6}, {10, 11}, {6, 10}, {3, 5}, {11, 1}, {5, 3}, {11, 9}, {3, 8}})[3]);
+  public void 정답3() {
+    int[] answer = solution(new int[][]{{4, 11}, {1, 12}, {8, 3}, {12, 7}, {4, 2}, {7, 11}, {4, 8}, {9, 6}, {10, 11}, {6, 10}, {3, 5}, {11, 1}, {5, 3}, {11, 9}, {3, 8}});
+
+    Assertions.assertEquals(4, answer[0]);
+    Assertions.assertEquals(0, answer[1]);
+    Assertions.assertEquals(1, answer[2]);
+    Assertions.assertEquals(2, answer[3]);
   }
 
 }
