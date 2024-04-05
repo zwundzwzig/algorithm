@@ -4,30 +4,46 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
+import java.util.Comparator;
+import java.util.PriorityQueue;
 
 class 호텔대실 {
   public int solution(String[][] book_time) {
-    int[] timeline = new int[24 * 60];
+    int answer;
+    int[][] bookTime = new int[book_time.length][2];
     int start;
     int end;
 
-    for (String[] book : book_time) {
-      start = convertTimeToMinutes(book[0]);
-      end = convertTimeToMinutes(book[1]);
+    for (int i = 0; i < book_time.length; i++) {
+      start = Integer.parseInt(book_time[i][0].replace(":", ""));
+      end = Integer.parseInt(book_time[i][1].replace(":", ""));
 
-      for (int i = start; i < end; i++) {
-        timeline[i]++;
+      end += 10;
+
+      if (end % 100 >= 60) end += 40;
+
+      bookTime[i][0] = start;
+      bookTime[i][1] = end;
+    }
+
+    Arrays.sort(bookTime, Comparator.comparingInt(a -> a[0]));
+
+    PriorityQueue<int[]> pq = new PriorityQueue<>(Comparator.comparingInt(a -> a[1]));
+    for (int[] book : bookTime) {
+      if (pq.isEmpty()) pq.add(book);
+      else {
+        int[] tmp = pq.peek();
+        end = tmp[1];
+
+        if (book[0] >= end) {
+          pq.poll();
+        }
+        pq.add(book);
       }
     }
 
-    return Arrays.stream(timeline).max().getAsInt();
-  }
-
-  private int convertTimeToMinutes(String time) {
-    String[] split = time.split(":");
-    int hour = Integer.parseInt(split[0]);
-    int minute = Integer.parseInt(split[1]);
-    return hour * 60 + minute;
+    answer = pq.size();
+    return answer;
   }
 
   @Test
